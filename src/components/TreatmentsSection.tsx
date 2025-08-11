@@ -1,38 +1,10 @@
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { getPriorityTreatments } from "@/data/treatments";
 
 const TreatmentsSection = () => {
-  const treatments = [
-    {
-      title: "Dermatologia Clínica",
-      description: "Diagnóstico e tratamento de doenças de pele como acne, dermatite, psoríase e outras condições dermatológicas.",
-      features: ["Consultas especializadas", "Biópsias", "Tratamento de lesões", "Acompanhamento contínuo"]
-    },
-    {
-      title: "Dermatologia Estética",
-      description: "Procedimentos para rejuvenescimento e melhoria da aparência da pele com técnicas modernas e seguras.",
-      features: ["Preenchimentos", "Botox", "Peelings químicos", "Microagulhamento"]
-    },
-    {
-      title: "Prevenção de Câncer de Pele",
-      description: "Rastreamento e diagnóstico precoce do câncer de pele através de mapeamento corporal e dermatoscopia.",
-      features: ["Mapeamento digital", "Dermatoscopia", "Biópsia de lesões", "Acompanhamento preventivo"]
-    },
-    {
-      title: "Tratamento de Acne",
-      description: "Abordagem completa para diferentes tipos de acne, desde casos leves até os mais severos.",
-      features: ["Análise personalizada", "Tratamentos tópicos", "Procedimentos específicos", "Acompanhamento regular"]
-    },
-    {
-      title: "Tricologia",
-      description: "Diagnóstico e tratamento de problemas capilares como alopecia, dermatite seborreica e outras condições.",
-      features: ["Análise do couro cabeludo", "Tratamentos específicos", "Orientação nutricional", "Protocolo personalizado"]
-    },
-    {
-      title: "Melasma e Manchas",
-      description: "Tratamento especializado para manchas de pele, melasma e hiperpigmentações com resultados eficazes.",
-      features: ["Diagnóstico preciso", "Laser específico", "Peelings direcionados", "Manutenção preventiva"]
-    }
-  ];
+  const treatments = getPriorityTreatments(6);
 
   return (
     <section id="tratamentos" className="py-24 bg-gradient-medical">
@@ -50,7 +22,7 @@ const TreatmentsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {treatments.map((treatment, index) => (
-            <Card key={index} className="p-8 shadow-card border-0 bg-background hover:shadow-medical transition-all duration-300 group">
+            <Card key={treatment.id} className="p-8 shadow-card border-0 bg-background hover:shadow-medical transition-all duration-300 group">
               <div className="space-y-6">
                 <div className="w-12 h-12 bg-gradient-hero rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <div className="w-6 h-6 bg-primary-foreground rounded-full"></div>
@@ -76,6 +48,14 @@ const TreatmentsSection = () => {
               </div>
             </Card>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button asChild variant="outline" size="lg">
+            <Link to="/tratamentos">
+              Ver Todos os Tratamentos
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

@@ -1,29 +1,11 @@
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { getPriorityTechnologies } from "@/data/technologies";
 import clinicTechImage from "@/assets/clinic-technology.jpg";
 
 const TechnologySection = () => {
-  const technologies = [
-    {
-      name: "Laser CO2 Fracionado",
-      description: "Rejuvenescimento e tratamento de cicatrizes com precisão milimétrica.",
-      benefits: ["Renovação celular", "Melhora da textura", "Redução de rugas", "Cicatrização rápida"]
-    },
-    {
-      name: "IPL (Luz Intensa Pulsada)",
-      description: "Tratamento de manchas, rosácea e rejuvenescimento facial.",
-      benefits: ["Remove manchas", "Melhora a rosácea", "Estimula colágeno", "Sem tempo de recuperação"]
-    },
-    {
-      name: "Radiofrequência",
-      description: "Estimulação de colágeno para firmeza e rejuvenescimento da pele.",
-      benefits: ["Firmeza da pele", "Reduz flacidez", "Melhora contorno", "Resultados progressivos"]
-    },
-    {
-      name: "Dermatoscopia Digital",
-      description: "Diagnóstico preciso de lesões com tecnologia de alta resolução.",
-      benefits: ["Diagnóstico preciso", "Monitoramento digital", "Detecção precoce", "Arquivo digital"]
-    }
-  ];
+  const technologies = getPriorityTechnologies(4);
 
   return (
     <section id="tecnologias" className="py-24 bg-background">
@@ -62,7 +44,7 @@ const TechnologySection = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {technologies.map((tech, index) => (
-            <Card key={index} className="p-8 shadow-card border-0 bg-medical-light hover:shadow-medical transition-all duration-300">
+            <Card key={tech.id} className="p-8 shadow-card border-0 bg-medical-light hover:shadow-medical transition-all duration-300">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-gradient-hero rounded-xl flex items-center justify-center flex-shrink-0">
@@ -89,6 +71,14 @@ const TechnologySection = () => {
               </div>
             </Card>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button asChild variant="outline" size="lg">
+            <Link to="/tecnologias">
+              Ver Todas as Tecnologias
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

@@ -8,34 +8,34 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 213 31% 15%;
+    --background: 40 40% 98%;
+    --foreground: 35 35% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 213 31% 15%;
+    --card: 40 35% 96%;
+    --card-foreground: 35 35% 15%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 213 31% 15%;
 
-    --primary: 200 100% 28%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 200 100% 40%;
+    --primary: 35 65% 55%;
+    --primary-foreground: 35 35% 15%;
+    --primary-glow: 35 75% 65%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 213 31% 15%;
+    --secondary: 40 30% 92%;
+    --secondary-foreground: 35 35% 15%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 40 25% 88%;
+    --muted-foreground: 35 20% 45%;
 
-    --accent: 45 93% 85%;
-    --accent-foreground: 213 31% 15%;
+    --accent: 45 85% 75%;
+    --accent-foreground: 35 35% 15%;
 
-    --medical: 200 100% 28%;
-    --medical-light: 200 100% 95%;
-    --medical-dark: 200 100% 20%;
+    --medical: 35 65% 55%;
+    --medical-light: 40 50% 95%;
+    --medical-dark: 35 55% 45%;
 
-    --gold: 45 93% 58%;
-    --gold-light: 45 93% 85%;
+    --gold: 45 85% 60%;
+    --gold-light: 45 70% 85%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -44,12 +44,12 @@ All colors MUST be HSL.
     --input: 214 32% 91%;
     --ring: 200 100% 28%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(200 100% 28%), hsl(200 100% 40%));
-    --gradient-medical: linear-gradient(180deg, hsl(200 100% 95%), hsl(0 0% 100%));
-    --gradient-accent: linear-gradient(135deg, hsl(45 93% 85%), hsl(45 93% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(35 65% 55%), hsl(45 85% 60%));
+    --gradient-medical: linear-gradient(180deg, hsl(40 50% 95%), hsl(40 40% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 70% 85%), hsl(35 75% 65%));
 
-    --shadow-medical: 0 10px 40px -10px hsl(200 100% 28% / 0.2);
-    --shadow-card: 0 4px 20px -2px hsl(200 100% 28% / 0.1);
+    --shadow-medical: 0 10px 40px -10px hsl(35 65% 55% / 0.2);
+    --shadow-card: 0 4px 20px -2px hsl(35 65% 55% / 0.1);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
