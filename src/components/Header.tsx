@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,8 +19,11 @@ const Header = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      setIsMobileMenuOpen(false); // Close mobile menu after navigation
     }
   };
+
+  const navigationItems = ["home", "sobre", "tratamentos", "tecnologias", "contato"];
 
   return (
     <header 
@@ -34,7 +40,7 @@ const Header = () => {
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
-            {["home", "sobre", "tratamentos", "tecnologias", "contato"].map((item) => (
+            {navigationItems.map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -47,10 +53,49 @@ const Header = () => {
 
           <Button
             onClick={() => scrollToSection("contato")}
-            className="bg-gradient-hero hover:shadow-medical transition-all duration-300"
+            className="hidden md:block bg-gradient-hero hover:shadow-medical transition-all duration-300"
           >
             Agendar Consulta
           </Button>
+
+          {/* Mobile Menu Button */}
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden text-foreground hover:text-primary"
+              >
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <div className="flex flex-col space-y-4 mt-8">
+                <div className="text-xl font-bold text-primary mb-6">
+                  Dra. Maria Cortez
+                </div>
+                
+                <nav className="flex flex-col space-y-4">
+                  {navigationItems.map((item) => (
+                    <button
+                      key={item}
+                      onClick={() => scrollToSection(item)}
+                      className="text-left text-lg text-foreground hover:text-primary transition-colors duration-300 capitalize font-medium py-2 border-b border-border/50"
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </nav>
+
+                <Button
+                  onClick={() => scrollToSection("contato")}
+                  className="bg-gradient-hero hover:shadow-medical transition-all duration-300 mt-6"
+                >
+                  Agendar Consulta
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
