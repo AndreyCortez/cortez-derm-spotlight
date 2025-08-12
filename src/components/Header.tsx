@@ -39,7 +39,7 @@ const Header = () => {
             Dra. Maria Cortez
           </div>
           
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             {navigationItems.map((item) => (
               <button
                 key={item}
@@ -53,7 +53,7 @@ const Header = () => {
 
           <Button
             onClick={() => scrollToSection("contato")}
-            className="hidden md:block bg-gradient-hero hover:shadow-medical transition-all duration-300"
+            className="hidden lg:block bg-gradient-hero hover:shadow-medical transition-all duration-300"
           >
             Agendar Consulta
           </Button>
@@ -64,7 +64,7 @@ const Header = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden text-foreground hover:text-primary"
+                className="lg:hidden text-foreground hover:text-primary"
               >
                 <Menu className="h-6 w-6" />
               </Button>

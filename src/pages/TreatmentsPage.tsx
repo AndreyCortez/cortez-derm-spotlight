@@ -33,7 +33,7 @@ const TreatmentsPage = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {treatments.map((treatment, index) => (
                 <Card key={treatment.id} className="overflow-hidden shadow-card border-0 bg-background hover:shadow-medical transition-all duration-300 group">
                   {treatment.image && (
@@ -51,19 +51,14 @@ const TreatmentsPage = () => {
                   )}
                   
                   <div className="p-6 space-y-4">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <div className="w-5 h-5 bg-primary-foreground rounded-sm"></div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-foreground mb-2">
-                          {treatment.title}
-                        </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {treatment.description}
-                        </p>
-                      </div>
-                    </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground mb-2">
+                      {treatment.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {treatment.description}
+                    </p>
+                  </div>
                   </div>
                 </Card>
               ))}

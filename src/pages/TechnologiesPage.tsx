@@ -66,7 +66,7 @@ const TechnologiesPage = () => {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {technologies.map((tech, index) => (
                 <Card key={tech.id} className="overflow-hidden shadow-card border-0 bg-medical-light hover:shadow-medical transition-all duration-300 group">
                   {tech.image && (
@@ -84,19 +84,14 @@ const TechnologiesPage = () => {
                   )}
                   
                   <div className="p-6 space-y-4">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center flex-shrink-0">
-                        <div className="w-5 h-5 bg-primary-foreground rounded-sm"></div>
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-bold text-foreground mb-2">
-                          {tech.name}
-                        </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {tech.description}
-                        </p>
-                      </div>
-                    </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground mb-2">
+                      {tech.name}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {tech.description}
+                    </p>
+                  </div>
                   </div>
                 </Card>
               ))}
