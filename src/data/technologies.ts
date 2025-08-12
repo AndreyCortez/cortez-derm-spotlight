@@ -3,6 +3,7 @@ export interface Technology {
   name: string;
   description: string;
   benefits: string[];
+  image?: string; // Optional image URL or path
   priority: number; // 1 = highest priority, higher numbers = lower priority
   isActive: boolean;
 }
@@ -13,6 +14,7 @@ export const technologies: Technology[] = [
     name: "Laser CO2 Fracionado",
     description: "Rejuvenescimento e tratamento de cicatrizes com precisão milimétrica.",
     benefits: ["Renovação celular", "Melhora da textura", "Redução de rugas", "Cicatrização rápida"],
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
     priority: 1,
     isActive: true
   },
@@ -21,6 +23,7 @@ export const technologies: Technology[] = [
     name: "IPL (Luz Intensa Pulsada)",
     description: "Tratamento de manchas, rosácea e rejuvenescimento facial.",
     benefits: ["Remove manchas", "Melhora a rosácea", "Estimula colágeno", "Sem tempo de recuperação"],
+    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80",
     priority: 2,
     isActive: true
   },
@@ -29,6 +32,7 @@ export const technologies: Technology[] = [
     name: "Radiofrequência",
     description: "Estimulação de colágeno para firmeza e rejuvenescimento da pele.",
     benefits: ["Firmeza da pele", "Reduz flacidez", "Melhora contorno", "Resultados progressivos"],
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
     priority: 3,
     isActive: true
   },
@@ -37,6 +41,7 @@ export const technologies: Technology[] = [
     name: "Dermatoscopia Digital",
     description: "Diagnóstico preciso de lesões com tecnologia de alta resolução.",
     benefits: ["Diagnóstico preciso", "Monitoramento digital", "Detecção precoce", "Arquivo digital"],
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80",
     priority: 4,
     isActive: true
   },
@@ -45,6 +50,7 @@ export const technologies: Technology[] = [
     name: "Criolipólise",
     description: "Redução de gordura localizada através do congelamento controlado das células adiposas.",
     benefits: ["Redução de medidas", "Não invasivo", "Sem cirurgia", "Resultados duradouros"],
+    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80",
     priority: 5,
     isActive: true
   },
@@ -53,6 +59,7 @@ export const technologies: Technology[] = [
     name: "Ultrasom Microfocado",
     description: "Lifting não cirúrgico com estímulo profundo do colágeno para firmeza da pele.",
     benefits: ["Lifting natural", "Sem cortes", "Resultados graduais", "Estimula colágeno"],
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
     priority: 6,
     isActive: true
   },
@@ -61,6 +68,7 @@ export const technologies: Technology[] = [
     name: "Laser Nd:YAG",
     description: "Tratamento de vasos, remoção de tatuagens e rejuvenescimento vascular.",
     benefits: ["Remove vasos", "Elimina tatuagens", "Melhora textura", "Procedimento seguro"],
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
     priority: 7,
     isActive: true
   },
@@ -69,6 +77,7 @@ export const technologies: Technology[] = [
     name: "Plasma Rico em Plaquetas (PRP)",
     description: "Bioestimulação natural usando fatores de crescimento do próprio paciente.",
     benefits: ["100% natural", "Estimula renovação", "Melhora qualidade", "Sem rejeição"],
+    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80",
     priority: 8,
     isActive: true
   }

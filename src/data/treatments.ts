@@ -3,6 +3,7 @@ export interface Treatment {
   title: string;
   description: string;
   features: string[];
+  image?: string; // Optional image URL or path
   priority: number; // 1 = highest priority, higher numbers = lower priority
   isActive: boolean;
 }
@@ -13,6 +14,7 @@ export const treatments: Treatment[] = [
     title: "Dermatologia Clínica",
     description: "Diagnóstico e tratamento de doenças de pele como acne, dermatite, psoríase e outras condições dermatológicas.",
     features: ["Consultas especializadas", "Biópsias", "Tratamento de lesões", "Acompanhamento contínuo"],
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80",
     priority: 1,
     isActive: true
   },
@@ -21,6 +23,7 @@ export const treatments: Treatment[] = [
     title: "Dermatologia Estética",
     description: "Procedimentos para rejuvenescimento e melhoria da aparência da pele com técnicas modernas e seguras.",
     features: ["Preenchimentos", "Botox", "Peelings químicos", "Microagulhamento"],
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
     priority: 2,
     isActive: true
   },
@@ -29,6 +32,7 @@ export const treatments: Treatment[] = [
     title: "Prevenção de Câncer de Pele",
     description: "Rastreamento e diagnóstico precoce do câncer de pele através de mapeamento corporal e dermatoscopia.",
     features: ["Mapeamento digital", "Dermatoscopia", "Biópsia de lesões", "Acompanhamento preventivo"],
+    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80",
     priority: 3,
     isActive: true
   },
@@ -37,6 +41,7 @@ export const treatments: Treatment[] = [
     title: "Tratamento de Acne",
     description: "Abordagem completa para diferentes tipos de acne, desde casos leves até os mais severos.",
     features: ["Análise personalizada", "Tratamentos tópicos", "Procedimentos específicos", "Acompanhamento regular"],
+    image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80",
     priority: 4,
     isActive: true
   },
@@ -45,6 +50,7 @@ export const treatments: Treatment[] = [
     title: "Tricologia",
     description: "Diagnóstico e tratamento de problemas capilares como alopecia, dermatite seborreica e outras condições.",
     features: ["Análise do couro cabeludo", "Tratamentos específicos", "Orientação nutricional", "Protocolo personalizado"],
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
     priority: 5,
     isActive: true
   },
@@ -53,6 +59,7 @@ export const treatments: Treatment[] = [
     title: "Melasma e Manchas",
     description: "Tratamento especializado para manchas de pele, melasma e hiperpigmentações com resultados eficazes.",
     features: ["Diagnóstico preciso", "Laser específico", "Peelings direcionados", "Manutenção preventiva"],
+    image: "https://images.unsplash.com/photo-1616391182219-e080b10e4e51?auto=format&fit=crop&w=800&q=80",
     priority: 6,
     isActive: true
   },
@@ -61,6 +68,7 @@ export const treatments: Treatment[] = [
     title: "Laser para Depilação",
     description: "Remoção definitiva de pelos indesejados com tecnologia laser de última geração.",
     features: ["Todas as fototipos", "Resultados duradouros", "Procedimento seguro", "Redução progressiva"],
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
     priority: 7,
     isActive: true
   },
@@ -69,6 +77,7 @@ export const treatments: Treatment[] = [
     title: "Rejuvenescimento Facial",
     description: "Protocolos completos para renovação da pele e redução dos sinais de envelhecimento.",
     features: ["Múltiplas técnicas", "Resultados naturais", "Protocolos personalizados", "Acompanhamento total"],
+    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=80",
     priority: 8,
     isActive: true
   }

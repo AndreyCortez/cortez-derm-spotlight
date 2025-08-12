@@ -66,35 +66,36 @@ const TechnologiesPage = () => {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {technologies.map((tech, index) => (
-                <Card key={tech.id} className="p-8 shadow-card border-0 bg-medical-light hover:shadow-medical transition-all duration-300">
-                  <div className="space-y-6">
-                    <div className="flex items-start justify-between">
-                      <div className="w-12 h-12 bg-gradient-hero rounded-xl flex items-center justify-center flex-shrink-0">
-                        <div className="w-6 h-6 bg-primary-foreground rounded-sm"></div>
-                      </div>
-                      <span className="text-xs bg-accent text-accent-foreground px-2 py-1 rounded-full">
+                <Card key={tech.id} className="overflow-hidden shadow-card border-0 bg-medical-light hover:shadow-medical transition-all duration-300 group">
+                  {tech.image && (
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src={tech.image}
+                        alt={tech.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                      <span className="absolute top-3 right-3 text-xs bg-black/70 text-white px-2 py-1 rounded-full">
                         Prioridade {tech.priority}
                       </span>
                     </div>
-                    
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        {tech.name}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {tech.description}
-                      </p>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      {tech.benefits.map((benefit, benefitIndex) => (
-                        <div key={benefitIndex} className="flex items-center space-x-2">
-                          <div className="w-1.5 h-1.5 bg-gradient-hero rounded-full"></div>
-                          <span className="text-sm text-foreground">{benefit}</span>
-                        </div>
-                      ))}
+                  )}
+                  
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-5 h-5 bg-primary-foreground rounded-sm"></div>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-foreground mb-2">
+                          {tech.name}
+                        </h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {tech.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </Card>
