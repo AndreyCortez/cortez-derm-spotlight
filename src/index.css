@@ -2,112 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Definição do sistema de design.
+  Esquema de cores baseado na paleta:
+  - #DBC9C5 (hsl(15, 20%, 85%))
+  - #CCACA4 (hsl(15, 20%, 75%))
+  - #AB8C84 (hsl(15, 20%, 60%))
 */
 
 @layer base {
   :root {
-    --background: 40 40% 98%;
-    --foreground: 35 35% 15%;
+    /* Cores base do modo claro */
+    /* ATUALIZAÇÃO: Fundo alterado para um bege mais suave */
+    --background: 15 20% 96%;
+    --foreground: 15 20% 15%;
 
-    --card: 40 35% 96%;
-    --card-foreground: 35 35% 15%;
+    --card: 15 20% 95%;
+    --card-foreground: 15 20% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 213 31% 15%;
+    --popover: 15 20% 98%;
+    --popover-foreground: 15 20% 15%;
 
-    --primary: 35 65% 55%;
-    --primary-foreground: 35 35% 15%;
-    --primary-glow: 35 75% 65%;
+    /* Cor primária (o tom mais escuro da paleta) */
+    --primary: 15 20% 60%;
+    --primary-foreground: 15 20% 98%;
+    --primary-glow: 15 25% 70%;
 
-    --secondary: 40 30% 92%;
-    --secondary-foreground: 35 35% 15%;
+    /* Cor secundária (o tom mais claro da paleta) */
+    --secondary: 15 20% 85%;
+    --secondary-foreground: 15 20% 15%;
 
-    --muted: 40 25% 88%;
-    --muted-foreground: 35 20% 45%;
+    --muted: 15 20% 92%;
+    --muted-foreground: 15 15% 45%;
 
-    --accent: 45 85% 75%;
-    --accent-foreground: 35 35% 15%;
-
-    --medical: 35 65% 55%;
-    --medical-light: 40 50% 95%;
-    --medical-dark: 35 55% 45%;
-
-    --gold: 45 85% 60%;
-    --gold-light: 45 70% 85%;
+    /* Cor de destaque (o tom médio da paleta) */
+    --accent: 15 20% 75%;
+    --accent-foreground: 15 20% 15%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 200 100% 28%;
+    --border: 15 20% 88%;
+    --input: 15 20% 88%;
+    --ring: 15 20% 60%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(35 65% 55%), hsl(45 85% 60%));
-    --gradient-medical: linear-gradient(180deg, hsl(40 50% 95%), hsl(40 40% 98%));
-    --gradient-accent: linear-gradient(135deg, hsl(45 70% 85%), hsl(35 75% 65%));
+    /* Gradientes usando a nova paleta */
+    --gradient-hero: linear-gradient(135deg, hsl(15 20% 60%), hsl(15 20% 75%));
+    --gradient-accent: linear-gradient(135deg, hsl(15 20% 85%), hsl(15 20% 70%));
 
-    --shadow-medical: 0 10px 40px -10px hsl(35 65% 55% / 0.2);
-    --shadow-card: 0 4px 20px -2px hsl(35 65% 55% / 0.1);
+    /* Sombras sutis com a cor primária */
+    --shadow-card: 0 4px 20px -2px hsl(15 20% 60% / 0.1);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Cores da barra lateral para o modo claro */
+    --sidebar-background: 15 20% 96%;
+    --sidebar-foreground: 15 20% 20%;
+    --sidebar-primary: 15 20% 60%;
+    --sidebar-primary-foreground: 15 20% 98%;
+    --sidebar-accent: 15 20% 90%;
+    --sidebar-accent-foreground: 15 20% 15%;
+    --sidebar-border: 15 20% 85%;
+    --sidebar-ring: 15 20% 60%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Cores base do modo escuro */
+    --background: 15 10% 10%;
+    --foreground: 15 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 15 10% 12%;
+    --card-foreground: 15 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 15 10% 8%;
+    --popover-foreground: 15 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Cor primária (o tom mais claro vira o principal no modo escuro) */
+    --primary: 15 20% 85%;
+    --primary-foreground: 15 20% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 15 15% 20%;
+    --secondary-foreground: 15 15% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 15 15% 20%;
+    --muted-foreground: 15 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 15 15% 30%;
+    --accent-foreground: 15 15% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 40%;
+    --destructive-foreground: 15 15% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 15 15% 20%;
+    --input: 15 15% 20%;
+    --ring: 15 20% 75%;
+
+    /* Cores da barra lateral para o modo escuro */
+    --sidebar-background: 15 10% 10%;
+    --sidebar-foreground: 15 15% 95%;
+    --sidebar-primary: 15 20% 85%;
+    --sidebar-primary-foreground: 15 10% 10%;
+    --sidebar-accent: 15 10% 15%;
+    --sidebar-accent-foreground: 15 15% 95%;
+    --sidebar-border: 15 10% 15%;
+    --sidebar-ring: 15 20% 75%;
   }
 }
 

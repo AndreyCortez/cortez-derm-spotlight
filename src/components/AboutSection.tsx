@@ -1,6 +1,6 @@
+import drMariaImage from "@/assets/MariaCortezHome.png";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import drMariaImage from "@/assets/dr-maria-cortez.jpg";
 
 const AboutSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -11,26 +11,42 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-medical pt-20">
+    <section id="home" className="relative flex lg:items-center bg-gradient-medical py-20 lg:py-32">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <div className="inline-block px-4 py-2 bg-accent/20 rounded-full">
+        {/* Container principal agora usa Grid para layout avançado */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8 items-center">
+          
+          {/* Bloco de Título (Item 1 do Grid) */}
+          <div className="space-y-8 lg:col-start-1">
+            {/* ATUALIZAÇÃO: Adicionadas classes para ocultar em telas pequenas */}
+            <div className="hidden lg:inline-block px-4 py-2 bg-accent/20 rounded-full">
               <span className="text-primary font-semibold">Dermatologia Especializada</span>
             </div>
-            
-            <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-center lg:text-left">
               Dra. Maria Cortez
               <span className="block text-primary mt-2">Dermatologista</span>
             </h1>
-            
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+          </div>
+
+          {/* Bloco da Imagem (Item 2 do Grid) */}
+          {/* No desktop, ocupa a coluna 2 e se estende por 2 linhas */}
+          <div className="relative lg:col-start-2 lg:row-start-1 lg:row-span-2">
+            <div className="absolute inset-0 bg-gradient-accent rounded-3xl blur-2xl opacity-30"></div>
+            <img
+              src={drMariaImage}
+              alt="Dra. Maria Cortez"
+              className="relative rounded-3xl shadow-medical w-full max-w-md mx-auto"
+            />
+          </div>
+
+          {/* Bloco de Texto e Botões (Item 3 do Grid) */}
+          <div className="space-y-8 lg:col-start-1">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl text-center lg:text-left">
               Com mais de 15 anos de experiência em dermatologia, especialista reconhecida 
               no tratamento de doenças de pele e procedimentos estéticos. Formada pela USP 
               e com residência no Hospital das Clínicas.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
                 size="lg"
                 onClick={() => scrollToSection("contato")}
@@ -48,17 +64,10 @@ const AboutSection = () => {
               </Button>
             </div>
           </div>
-          
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-accent rounded-3xl blur-2xl opacity-30"></div>
-            <img
-              src={drMariaImage}
-              alt="Dra. Maria Cortez"
-              className="relative rounded-3xl shadow-medical w-full max-w-md mx-auto"
-            />
-          </div>
+
         </div>
 
+        {/* Seção inferior também atualizada para ser responsiva */}
         <div className="mt-24 grid md:grid-cols-2 gap-12">
           <div className="relative bg-card rounded-3xl p-8 shadow-medical">
             <h3 className="text-2xl font-bold text-foreground mb-6">Especialidades</h3>

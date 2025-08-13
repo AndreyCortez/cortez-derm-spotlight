@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import clinicLogo from "@/assets/clinic-logo.png";
+import clinicLogo from "@/assets/MariaCortezLogo.jpg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
