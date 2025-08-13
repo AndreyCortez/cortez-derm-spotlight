@@ -1,6 +1,6 @@
+import React, { useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getAllTechnologiesSorted } from "@/data/technologies";
 import Header from "@/components/Header";
@@ -10,6 +10,10 @@ import clinicTechImage from "@/assets/clinic-technology.jpg";
 const TechnologiesPage = () => {
   const technologies = getAllTechnologiesSorted();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -18,13 +22,6 @@ const TechnologiesPage = () => {
         <section className="py-24 bg-background">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-              <Button variant="outline" asChild className="mb-8">
-                <Link to="/" className="inline-flex items-center gap-2">
-                  <ArrowLeft className="w-4 h-4" />
-                  Voltar ao início
-                </Link>
-              </Button>
-              
               <h1 className="text-5xl font-bold text-foreground mb-6">
                 Tecnologias Avançadas
               </h1>
@@ -77,9 +74,6 @@ const TechnologiesPage = () => {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                      <span className="absolute top-3 right-3 text-xs bg-black/70 text-white px-2 py-1 rounded-full">
-                        Prioridade {tech.priority}
-                      </span>
                     </div>
                   )}
                   

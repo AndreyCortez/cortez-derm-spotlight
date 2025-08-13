@@ -11,7 +11,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-medical">
+    <section id="home" className="relative min-h-screen flex items-center bg-gradient-medical pt-20">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">

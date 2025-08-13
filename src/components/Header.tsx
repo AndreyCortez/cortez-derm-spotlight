@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import clinicLogo from "@/assets/clinic-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +26,11 @@ const Header = () => {
     }
   };
 
+  const goToHome = () => {
+    navigate("/");
+    setIsMobileMenuOpen(false);
+  };
+
   const navigationItems = ["home", "tratamentos", "tecnologias", "contato"];
 
   return (
@@ -35,11 +43,21 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">
-            Dra. Maria Cortez
+          <div 
+            onClick={goToHome}
+            className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
+          >
+            <img 
+              src={clinicLogo} 
+              alt="Clínica Dra. Maria Cortez" 
+              className="w-10 h-10 rounded-full"
+            />
+            <div className="text-2xl font-bold text-primary hidden sm:block">
+              Dra. Maria Cortez
+            </div>
           </div>
           
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden xl:flex items-center space-x-8">
             {navigationItems.map((item) => (
               <button
                 key={item}
@@ -53,7 +71,7 @@ const Header = () => {
 
           <Button
             onClick={() => scrollToSection("contato")}
-            className="hidden lg:block bg-gradient-hero hover:shadow-medical transition-all duration-300"
+            className="hidden xl:block bg-gradient-hero hover:shadow-medical transition-all duration-300"
           >
             Agendar Consulta
           </Button>
@@ -64,15 +82,25 @@ const Header = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="lg:hidden text-foreground hover:text-primary"
+                className="xl:hidden text-foreground hover:text-primary"
               >
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col space-y-4 mt-8">
-                <div className="text-xl font-bold text-primary mb-6">
-                  Dra. Maria Cortez
+                <div 
+                  onClick={goToHome}
+                  className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity mb-6"
+                >
+                  <img 
+                    src={clinicLogo} 
+                    alt="Clínica Dra. Maria Cortez" 
+                    className="w-8 h-8 rounded-full"
+                  />
+                  <div className="text-xl font-bold text-primary">
+                    Dra. Maria Cortez
+                  </div>
                 </div>
                 
                 <nav className="flex flex-col space-y-4">
