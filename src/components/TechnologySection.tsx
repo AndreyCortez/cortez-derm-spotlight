@@ -20,25 +20,6 @@ const TechnologySection = () => {
               mais eficazes, seguros e com resultados superiores. Nossa clínica 
               está equipada com as mais modernas tecnologias em dermatologia.
             </p>
-            <div className="bg-gradient-accent p-6 rounded-2xl">
-              <h3 className="text-lg font-semibold text-foreground mb-3">
-                Compromisso com a Excelência
-              </h3>
-              <p className="text-muted-foreground">
-                Investimos constantemente em tecnologia e capacitação para 
-                garantir que nossos pacientes tenham acesso aos melhores 
-                tratamentos disponíveis no mercado.
-              </p>
-            </div>
-          </div>
-          
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-hero rounded-3xl blur-2xl opacity-20"></div>
-            <img
-              src={clinicTechImage}
-              alt="Tecnologias da clínica"
-              className="relative rounded-3xl shadow-medical w-full"
-            />
           </div>
         </div>
 

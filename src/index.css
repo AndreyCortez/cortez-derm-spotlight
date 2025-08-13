@@ -12,11 +12,12 @@
 @layer base {
   :root {
     /* Cores base do modo claro */
-    /* ATUALIZAÇÃO: Fundo alterado para um bege mais suave */
-    --background: 15 20% 96%;
+    /* ATUALIZAÇÃO: Fundo alterado para um bege suave */
+    --background: 40 30% 97%;
     --foreground: 15 20% 15%;
 
-    --card: 15 20% 95%;
+    /* ATUALIZAÇÃO: Cor do card alterada para um tom mais escuro, próximo de #AB8C84 */
+    --card: 15 20% 88%;
     --card-foreground: 15 20% 15%;
 
     --popover: 15 20% 98%;

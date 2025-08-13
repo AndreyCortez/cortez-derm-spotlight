@@ -11,7 +11,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="home" className="relative flex lg:items-center bg-gradient-medical py-20 lg:py-32">
+    <section id="home" className="relative flex lg:items-center bg-background py-20 lg:py-32">
       <div className="container mx-auto px-6 relative z-10">
         {/* Container principal agora usa Grid para layout avançado */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-8 items-center">

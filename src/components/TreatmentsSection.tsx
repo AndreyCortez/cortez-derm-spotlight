@@ -7,7 +7,7 @@ const TreatmentsSection = () => {
   const treatments = getPriorityTreatments(6);
 
   return (
-    <section id="tratamentos" className="py-24 bg-gradient-medical">
+    <section id="tratamentos" className="py-24 bg-card">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6">

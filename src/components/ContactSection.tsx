@@ -42,7 +42,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contato" className="py-24 bg-gradient-medical">
+    <section id="contato" className="bg-card py-24">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6">
@@ -54,8 +54,11 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          <Card className="p-8 shadow-medical border-0 bg-background">
+        {/* ATUALIZAÇÃO: Grid reordenado e alinhado com flexbox */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          
+          {/* 1. Envie uma Mensagem (Topo-Esquerda) */}
+          <Card className="p-8 shadow-card border-0 bg-background">
             <h3 className="text-2xl font-bold text-foreground mb-6">
               Envie uma Mensagem
             </h3>
@@ -128,85 +131,88 @@ const ContactSection = () => {
             </form>
           </Card>
 
-          <div className="space-y-8">
-            {/* Google Maps */}
-            <Card className="p-0 shadow-card border-0 bg-background overflow-hidden">
-              <div className="p-6 pb-0">
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Localização
-                </h3>
-              </div>
-              <div className="h-64 w-full">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0963767413406!2d-46.65418938498474!3d-23.56168598468213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt!2sbr!4v1635789012345!5m2!1spt!2sbr"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Localização da Clínica Dra. Maria Cortez"
-                />
-              </div>
-              <div className="p-6">
-                <p className="text-muted-foreground">
-                  Av. Paulista, 1000 - Sala 1502<br />
-                  Bela Vista, São Paulo - SP<br />
-                  CEP: 01310-100
-                </p>
-              </div>
-            </Card>
-
-            {/* Google Reviews */}
-            <Card className="p-0 shadow-card border-0 bg-background overflow-hidden">
-              <div className="p-6 pb-0">
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Avaliações no Google
-                </h3>
-              </div>
-              <div className="h-64 w-full">
-                <iframe 
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD5Q8J2Y9X1Z3K4L5M6N7O8P9Q0R1S2T3U4&q=Av.+Paulista+1000+Sao+Paulo&zoom=15&maptype=roadmap&reviews=true"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Avaliações da Clínica Dra. Maria Cortez"
-                />
-              </div>
-            </Card>
-
-            {/* Contact Info */}
-            <Card className="p-8 shadow-card border-0 bg-accent/20">
-              <h3 className="text-2xl font-bold text-foreground mb-6">
-                Informações de Contato
+          {/* 2. Localização (Topo-Direita) */}
+          <Card className="p-0 shadow-card border-0 bg-background overflow-hidden flex flex-col">
+            <div className="p-6 pb-0">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Localização
               </h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
-                    <span className="text-primary-foreground text-sm">📞</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">(11) 3456-7890</p>
-                    <p className="text-sm text-muted-foreground">Segunda à Sexta: 8:00 - 18:00</p>
-                  </div>
-                </div>
+            </div>
+            <div className="h-full w-full flex-grow">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0963767413406!2d-46.65418938498474!3d-23.56168598468213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt!2sbr!4v1635789012345!5m2!1spt!2sbr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização da Clínica Dra. Maria Cortez"
+              />
+            </div>
+            <div className="p-6">
+              <p className="text-muted-foreground">
+                Av. Paulista, 1000 - Sala 1502<br />
+                Bela Vista, São Paulo - SP<br />
+                CEP: 01310-100
+              </p>
+            </div>
+          </Card>
 
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
-                    <span className="text-primary-foreground text-sm">✉️</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground">contato@drmariacortez.com.br</p>
-                    <p className="text-sm text-muted-foreground">Resposta em até 24h</p>
-                  </div>
+          {/* 3. Informações de Contato (Fundo-Esquerda) */}
+          <Card className="p-8 shadow-card border-0 bg-accent/20 flex flex-col">
+            <h3 className="text-2xl font-bold text-foreground mb-6">
+              Informações de Contato
+            </h3>
+            <div className="space-y-4 flex-grow flex flex-col justify-center">
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
+                  <span className="text-primary-foreground text-xl">📞</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">(11) 3456-7890</p>
+                  <p className="text-sm text-muted-foreground">Segunda à Sexta: 8:00 - 18:00</p>
                 </div>
               </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
+                  <span className="text-primary-foreground text-xl">✉️</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">contato@drmariacortez.com.br</p>
+                  <p className="text-sm text-muted-foreground">Resposta em até 24h</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          {/* 4. Avaliações no Google (Fundo-Direita) */}
+           <Card className="p-8 shadow-card border-0 bg-background flex flex-col items-center justify-center text-center">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                O que nossos pacientes dizem
+              </h3>
+              <div className="flex items-center gap-2 text-amber-500">
+                {/* Renderiza 5 estrelas */}
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                ))}
+              </div>
+              <p className="text-muted-foreground mt-4 mb-6">
+                Clique no botão abaixo para ler as avaliações de nossos pacientes no Google.
+              </p>
+              <Button 
+                asChild 
+                className="bg-gradient-hero hover:shadow-medical transition-all duration-300"
+              >
+                <a 
+                  href="https://share.google/cHSqvtTPGzpFEyLY7" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Ver Avaliações no Google
+                </a>
+              </Button>
             </Card>
-          </div>
         </div>
       </div>
     </section>
