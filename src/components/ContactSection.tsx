@@ -129,104 +129,81 @@ const ContactSection = () => {
           </Card>
 
           <div className="space-y-8">
-            <Card className="p-8 shadow-card border-0 bg-background">
+            {/* Google Maps */}
+            <Card className="p-0 shadow-card border-0 bg-background overflow-hidden">
+              <div className="p-6 pb-0">
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Localização
+                </h3>
+              </div>
+              <div className="h-64 w-full">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0963767413406!2d-46.65418938498474!3d-23.56168598468213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt!2sbr!4v1635789012345!5m2!1spt!2sbr"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localização da Clínica Dra. Maria Cortez"
+                />
+              </div>
+              <div className="p-6">
+                <p className="text-muted-foreground">
+                  Av. Paulista, 1000 - Sala 1502<br />
+                  Bela Vista, São Paulo - SP<br />
+                  CEP: 01310-100
+                </p>
+              </div>
+            </Card>
+
+            {/* Google Reviews */}
+            <Card className="p-0 shadow-card border-0 bg-background overflow-hidden">
+              <div className="p-6 pb-0">
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Avaliações no Google
+                </h3>
+              </div>
+              <div className="h-64 w-full">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0963767413406!2d-46.65418938498474!3d-23.56168598468213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt!2sbr!4v1635789012345!5m2!1spt!2sbr&reviews=1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Avaliações da Clínica Dra. Maria Cortez"
+                />
+              </div>
+            </Card>
+
+            {/* Contact Info */}
+            <Card className="p-8 shadow-card border-0 bg-accent/20">
               <h3 className="text-2xl font-bold text-foreground mb-6">
                 Informações de Contato
               </h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-hero rounded-xl flex items-center justify-center">
-                    <div className="w-6 h-6 bg-primary-foreground rounded-sm"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">Endereço</h4>
-                    <p className="text-muted-foreground">
-                      Av. Paulista, 1000 - Sala 1502<br />
-                      Bela Vista, São Paulo - SP<br />
-                      CEP: 01310-100
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-hero rounded-xl flex items-center justify-center">
-                    <div className="w-6 h-6 bg-primary-foreground rounded-sm"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">Telefone</h4>
-                    <p className="text-muted-foreground">(11) 3456-7890</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-hero rounded-xl flex items-center justify-center">
-                    <div className="w-6 h-6 bg-primary-foreground rounded-sm"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">E-mail</h4>
-                    <p className="text-muted-foreground">contato@drmariacortez.com.br</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-hero rounded-xl flex items-center justify-center">
-                    <div className="w-6 h-6 bg-primary-foreground rounded-sm"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">Horário</h4>
-                    <p className="text-muted-foreground">
-                      Segunda à Sexta: 8:00 - 18:00<br />
-                      Sábado: 8:00 - 12:00
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-8 shadow-card border-0 bg-accent/20">
-              <h3 className="text-2xl font-bold text-foreground mb-6">
-                Redes Sociais
-              </h3>
-              
               <div className="space-y-4">
-                <a 
-                  href="https://wa.me/5511999999999" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 bg-background rounded-xl hover:shadow-card transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
-                    <span className="text-white font-bold">W</span>
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
+                    <span className="text-primary-foreground text-sm">📞</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                      WhatsApp
-                    </h4>
-                    <p className="text-muted-foreground text-sm">
-                      Agende pelo WhatsApp
-                    </p>
+                    <p className="font-semibold text-foreground">(11) 3456-7890</p>
+                    <p className="text-sm text-muted-foreground">Segunda à Sexta: 8:00 - 18:00</p>
                   </div>
-                </a>
+                </div>
 
-                <a 
-                  href="https://instagram.com/drmariacortez" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 bg-background rounded-xl hover:shadow-card transition-all duration-300 group"
-                >
-                  <div className="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center">
-                    <span className="text-white font-bold">IG</span>
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
+                    <span className="text-primary-foreground text-sm">✉️</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                      Instagram
-                    </h4>
-                    <p className="text-muted-foreground text-sm">
-                      @drmariacortez
-                    </p>
+                    <p className="font-semibold text-foreground">contato@drmariacortez.com.br</p>
+                    <p className="text-sm text-muted-foreground">Resposta em até 24h</p>
                   </div>
-                </a>
+                </div>
               </div>
             </Card>
           </div>

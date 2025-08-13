@@ -23,7 +23,7 @@ const Header = () => {
     }
   };
 
-  const navigationItems = ["home", "sobre", "tratamentos", "tecnologias", "contato"];
+  const navigationItems = ["home", "tratamentos", "tecnologias", "contato"];
 
   return (
     <header 
