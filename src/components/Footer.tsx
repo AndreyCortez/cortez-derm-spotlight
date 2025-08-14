@@ -1,3 +1,5 @@
+import { contactData } from "@/data/contact";
+
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -11,17 +13,16 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12">
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold">Dra. Maria Cortez</h3>
+            <h3 className="text-2xl font-bold">{contactData.doctor.name}</h3>
             <p className="text-background/80 leading-relaxed">
-              Especialista em dermatologia dedicada a cuidar da saúde e 
-              beleza da sua pele com excelência e tecnologia de ponta.
+              {contactData.doctor.description}
             </p>
             <div className="space-y-2">
               <p className="text-background/80">
-                <strong>CRM:</strong> 123.456-SP
+                <strong>CRM:</strong> {contactData.doctor.crm}
               </p>
               <p className="text-background/80">
-                <strong>RQE:</strong> 78.901
+                <strong>RQE:</strong> {contactData.doctor.rqe}
               </p>
             </div>
           </div>
@@ -44,18 +45,18 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-xl font-semibold">Contato</h4>
             <div className="space-y-3 text-background/80">
-              <p>Av. Paulista, 1000 - Sala 1502</p>
-              <p>Bela Vista, São Paulo - SP</p>
-              <p>CEP: 01310-100</p>
-              <p>(11) 3456-7890</p>
-              <p>contato@drmariacortez.com.br</p>
+              <p>{contactData.address.street}</p>
+              <p>{contactData.address.neighborhood}, {contactData.address.city} - {contactData.address.state}</p>
+              <p>CEP: {contactData.address.zipCode}</p>
+              <p>{contactData.contact.phone}</p>
+              <p>{contactData.contact.email}</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-background/20 mt-12 pt-8 text-center">
           <p className="text-background/60">
-            © 2024 Dra. Maria Cortez. Todos os direitos reservados.
+            © 2024 {contactData.doctor.name}. Todos os direitos reservados.
           </p>
         </div>
       </div>
