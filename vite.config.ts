@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // base: "/cortez-derm-spotlight/",
+  base: "/cortez-derm-spotlight/",
   server: {
     host: "::",
     port: 8080,

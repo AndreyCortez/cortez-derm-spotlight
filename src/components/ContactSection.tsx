@@ -140,7 +140,8 @@ const ContactSection = () => {
             </div>
             <div className="h-full w-full flex-grow">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0963767413406!2d-46.65418938498474!3d-23.56168598468213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt!2sbr!4v1635789012345!5m2!1spt!2sbr"
+              
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.9750769894913!2d-46.666792099999995!3d-23.533398800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce590010ef30ef%3A0x16c92248feb2f5bb!2sDra%20Maria%20Cortez%20-%20Dermatologista!5e0!3m2!1spt-BR!2sbr!4v1755186948828!5m2!1spt-BR!2sbr"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -152,9 +153,9 @@ const ContactSection = () => {
             </div>
             <div className="p-6">
               <p className="text-muted-foreground">
-                Av. Paulista, 1000 - Sala 1502<br />
-                Bela Vista, São Paulo - SP<br />
-                CEP: 01310-100
+                R. Turiassu, 390 - Conjunto 113 e 114<br />
+                Perdizes, São Paulo - SP<br />
+                CEP: 05005-000
               </p>
             </div>
           </Card>
@@ -170,7 +171,7 @@ const ContactSection = () => {
                   <span className="text-primary-foreground text-xl">📞</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">(11) 3456-7890</p>
+                  <p className="font-semibold text-foreground">(11) 94046-4727</p>
                   <p className="text-sm text-muted-foreground">Segunda à Sexta: 8:00 - 18:00</p>
                 </div>
               </div>
@@ -179,7 +180,7 @@ const ContactSection = () => {
                   <span className="text-primary-foreground text-xl">✉️</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">contato@drmariacortez.com.br</p>
+                  <p className="font-semibold text-foreground">mariacortezsousamb@gmail.com</p>
                   <p className="text-sm text-muted-foreground">Resposta em até 24h</p>
                 </div>
               </div>

@@ -42,9 +42,9 @@ const AboutSection = () => {
           {/* Bloco de Texto e Botões (Item 3 do Grid) */}
           <div className="space-y-8 lg:col-start-1">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl text-center lg:text-left">
-              Com mais de 15 anos de experiência em dermatologia, especialista reconhecida 
-              no tratamento de doenças de pele e procedimentos estéticos. Formada pela USP 
-              e com residência no Hospital das Clínicas.
+              A Dra. Maria Cortez é especialista pela Sociedade Brasileira de Dermatologia, com residência pelo Hospital
+              do Servidor Público Municipal de São Paulo. Sua expertise é aplicada na preceptoria voluntária
+              de Cosmiatria na mesma instituição.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
@@ -90,12 +90,14 @@ const AboutSection = () => {
           <div className="relative bg-card rounded-3xl p-8 shadow-medical">
             <h3 className="text-2xl font-bold text-foreground mb-6">Missão</h3>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              "Minha missão é proporcionar aos meus pacientes não apenas tratamentos 
-              eficazes, mas também um cuidado humanizado e personalizado. Acredito 
-              que cada pele é única e merece atenção especializada."
+              "Minha missão é unir conhecimento científico e ética para 
+              oferecer um cuidado dermatológico individualizado. 
+              Acredito em uma abordagem integral, olhando para você como um todo, 
+              para promover saúde, realçar sua beleza natural com resultados refinados 
+              e garantir seu bem-estar duradouro."
             </p>
             
-            <div className="mt-8 grid grid-cols-2 gap-6 text-center">
+            {/* <div className="mt-8 grid grid-cols-2 gap-6 text-center">
               <div>
                 <h4 className="text-xl font-bold text-primary mb-2">15+</h4>
                 <p className="text-sm text-muted-foreground">Anos de Experiência</p>
@@ -104,7 +106,7 @@ const AboutSection = () => {
                 <h4 className="text-xl font-bold text-primary mb-2">1000+</h4>
                 <p className="text-sm text-muted-foreground">Pacientes Atendidos</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
