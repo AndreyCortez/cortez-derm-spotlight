@@ -31,7 +31,7 @@ const TechnologiesPage = () => {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            {/* <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
               <div className="space-y-8">
                 <h2 className="text-3xl font-bold text-foreground">
                   Equipamentos de Última Geração
@@ -61,7 +61,7 @@ const TechnologiesPage = () => {
                   className="relative rounded-3xl shadow-medical w-full"
                 />
               </div>
-            </div>
+            </div> */}
 
             <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {technologies.map((tech, index) => (

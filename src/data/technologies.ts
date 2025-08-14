@@ -2,7 +2,6 @@ export interface Technology {
   id: string;
   name: string;
   description: string;
-  benefits: string[];
   image?: string; // Optional image URL or path
   priority: number; // 1 = highest priority, higher numbers = lower priority
   isActive: boolean;
@@ -10,75 +9,43 @@ export interface Technology {
 
 export const technologies: Technology[] = [
   {
-    id: "laser-co2",
-    name: "Laser CO2 Fracionado",
-    description: "Rejuvenescimento e tratamento de cicatrizes com precisão milimétrica.",
-    benefits: ["Renovação celular", "Melhora da textura", "Redução de rugas", "Cicatrização rápida"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
+    id: "ulthera-ultrassom-microfocado",
+    name: "Ulthera® (Ultrassom Microfocado)",
+    description: "Tratamento não invasivo com efeito lifting que usa ultrassom para estimular o colágeno nas camadas profundas da pele, combatendo a flacidez.",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
     priority: 1,
     isActive: true
   },
   {
-    id: "ipl",
-    name: "IPL (Luz Intensa Pulsada)",
-    description: "Tratamento de manchas, rosácea e rejuvenescimento facial.",
-    benefits: ["Remove manchas", "Melhora a rosácea", "Estimula colágeno", "Sem tempo de recuperação"],
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80",
+    id: "laser-de-picossegundos",
+    name: "Laser de Picossegundos",
+    description: "Tecnologia ultrarrápida para remoção de tatuagens e manchas escuras. Também melhora a textura da pele, poros e rugas finas com mínimo tempo de recuperação.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
     priority: 2,
+    isActive: true
+  },
+  {
+    id: "luz-intensa-pulsada",
+    name: "Luz Intensa Pulsada (LIP)",
+    description: "Utiliza flashes de luz para tratar manchas solares, vasos finos e vermelhidão (rosácea), resultando em uma pele com tom mais uniforme e luminosa.",
+    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80",
+    priority: 3,
     isActive: true
   },
   {
     id: "radiofrequencia",
     name: "Radiofrequência",
-    description: "Estimulação de colágeno para firmeza e rejuvenescimento da pele.",
-    benefits: ["Firmeza da pele", "Reduz flacidez", "Melhora contorno", "Resultados progressivos"],
+    description: "Aquece a pele para contrair e estimular a produção de colágeno, combatendo a flacidez facial e corporal e definindo os contornos.",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
-    priority: 3,
-    isActive: true
-  },
-  {
-    id: "dermatoscopia",
-    name: "Dermatoscopia Digital",
-    description: "Diagnóstico preciso de lesões com tecnologia de alta resolução.",
-    benefits: ["Diagnóstico preciso", "Monitoramento digital", "Detecção precoce", "Arquivo digital"],
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80",
     priority: 4,
     isActive: true
   },
   {
-    id: "criolipolise",
-    name: "Criolipólise",
-    description: "Redução de gordura localizada através do congelamento controlado das células adiposas.",
-    benefits: ["Redução de medidas", "Não invasivo", "Sem cirurgia", "Resultados duradouros"],
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80",
+    id: "coolsculpting-criolipolise",
+    name: "CoolSculpting® (Criolipólise)",
+    description: "Reduz a gordura localizada de forma não invasiva através do resfriamento controlado, com resultados visíveis e duradouros em áreas como abdômen e flancos.",
+    image: "https://images.unsplash.com/photo-1616391182219-e080b10e4e51?auto=format&fit=crop&w=800&q=80",
     priority: 5,
-    isActive: true
-  },
-  {
-    id: "ultrasom-focado",
-    name: "Ultrasom Microfocado",
-    description: "Lifting não cirúrgico com estímulo profundo do colágeno para firmeza da pele.",
-    benefits: ["Lifting natural", "Sem cortes", "Resultados graduais", "Estimula colágeno"],
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
-    priority: 6,
-    isActive: true
-  },
-  {
-    id: "laser-nd-yag",
-    name: "Laser Nd:YAG",
-    description: "Tratamento de vasos, remoção de tatuagens e rejuvenescimento vascular.",
-    benefits: ["Remove vasos", "Elimina tatuagens", "Melhora textura", "Procedimento seguro"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
-    priority: 7,
-    isActive: true
-  },
-  {
-    id: "plasma-rico",
-    name: "Plasma Rico em Plaquetas (PRP)",
-    description: "Bioestimulação natural usando fatores de crescimento do próprio paciente.",
-    benefits: ["100% natural", "Estimula renovação", "Melhora qualidade", "Sem rejeição"],
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80",
-    priority: 8,
     isActive: true
   }
 ];

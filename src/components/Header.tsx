@@ -1,22 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import clinicLogo from "@/assets/MariaCortezLogo.jpg";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -35,11 +26,9 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-background/95 backdrop-blur-md shadow-card" 
-          : "bg-transparent"
-      }`}
+      // AQUI ESTÁ A MUDANÇA:
+      // Removemos a lógica condicional e aplicamos o estilo de fundo diretamente.
+      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md shadow-card transition-all duration-300"
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
