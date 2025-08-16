@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
+import { contactData } from "@/data/contact";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -140,7 +141,7 @@ const ContactSection = () => {
             </div>
             <div className="h-full w-full flex-grow">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0963767413406!2d-46.65418938498474!3d-23.56168598468213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt!2sbr!4v1635789012345!5m2!1spt!2sbr"
+                src={contactData.googleServices.mapsEmbedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -152,9 +153,9 @@ const ContactSection = () => {
             </div>
             <div className="p-6">
               <p className="text-muted-foreground">
-                Av. Paulista, 1000 - Sala 1502<br />
-                Bela Vista, São Paulo - SP<br />
-                CEP: 01310-100
+                {contactData.address.street}<br />
+                {contactData.address.neighborhood}, {contactData.address.city} - {contactData.address.state}<br />
+                CEP: {contactData.address.zipCode}
               </p>
             </div>
           </Card>
@@ -170,8 +171,8 @@ const ContactSection = () => {
                   <span className="text-primary-foreground text-xl">📞</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">(11) 3456-7890</p>
-                  <p className="text-sm text-muted-foreground">Segunda à Sexta: 8:00 - 18:00</p>
+                  <p className="font-semibold text-foreground">{contactData.contact.phone}</p>
+                  <p className="text-sm text-muted-foreground">{contactData.contact.workingHours}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -179,8 +180,8 @@ const ContactSection = () => {
                   <span className="text-primary-foreground text-xl">✉️</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">contato@drmariacortez.com.br</p>
-                  <p className="text-sm text-muted-foreground">Resposta em até 24h</p>
+                  <p className="font-semibold text-foreground">{contactData.contact.email}</p>
+                  <p className="text-sm text-muted-foreground">{contactData.contact.responseTime}</p>
                 </div>
               </div>
             </div>
@@ -205,7 +206,7 @@ const ContactSection = () => {
                 className="bg-gradient-hero hover:shadow-medical transition-all duration-300"
               >
                 <a 
-                  href="https://share.google/cHSqvtTPGzpFEyLY7" 
+                  href={contactData.googleServices.reviewsUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
