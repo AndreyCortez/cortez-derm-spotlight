@@ -1,3 +1,9 @@
+import criolipolise from "@/assets/criolipolise.png";
+import laserPicossegundos from "@/assets/laser_picossegundos.png";
+import luzIntensaPulsada from "@/assets/luz_intensa_pulsada.png";
+import radiofrequencia from "@/assets/radiofrequencia.png";
+import ultrassomMicrofocado from "@/assets/ultrassom_microfocado.png";
+
 export interface Technology {
   id: string;
   name: string;
@@ -12,7 +18,7 @@ export const technologies: Technology[] = [
     id: "ulthera-ultrassom-microfocado",
     name: "Ulthera® (Ultrassom Microfocado)",
     description: "Tratamento não invasivo com efeito lifting que usa ultrassom para estimular o colágeno nas camadas profundas da pele, combatendo a flacidez.",
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
+    image: ultrassomMicrofocado,
     priority: 1,
     isActive: true
   },
@@ -20,7 +26,7 @@ export const technologies: Technology[] = [
     id: "laser-de-picossegundos",
     name: "Laser de Picossegundos",
     description: "Tecnologia ultrarrápida para remoção de tatuagens e manchas escuras. Também melhora a textura da pele, poros e rugas finas com mínimo tempo de recuperação.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80",
+    image: laserPicossegundos,
     priority: 2,
     isActive: true
   },
@@ -28,7 +34,7 @@ export const technologies: Technology[] = [
     id: "luz-intensa-pulsada",
     name: "Luz Intensa Pulsada (LIP)",
     description: "Utiliza flashes de luz para tratar manchas solares, vasos finos e vermelhidão (rosácea), resultando em uma pele com tom mais uniforme e luminosa.",
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80",
+    image: luzIntensaPulsada,
     priority: 3,
     isActive: true
   },
@@ -36,7 +42,7 @@ export const technologies: Technology[] = [
     id: "radiofrequencia",
     name: "Radiofrequência",
     description: "Aquece a pele para contrair e estimular a produção de colágeno, combatendo a flacidez facial e corporal e definindo os contornos.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+    image: radiofrequencia,
     priority: 4,
     isActive: true
   },
@@ -44,7 +50,7 @@ export const technologies: Technology[] = [
     id: "coolsculpting-criolipolise",
     name: "CoolSculpting® (Criolipólise)",
     description: "Reduz a gordura localizada de forma não invasiva através do resfriamento controlado, com resultados visíveis e duradouros em áreas como abdômen e flancos.",
-    image: "https://images.unsplash.com/photo-1616391182219-e080b10e4e51?auto=format&fit=crop&w=800&q=80",
+    image: criolipolise,
     priority: 5,
     isActive: true
   }
