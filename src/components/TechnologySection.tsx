@@ -10,8 +10,8 @@ const TechnologySection = () => {
   return (
     <section id="tecnologias" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-          <div className="space-y-8">
+        <div className="text-center mb-16">
+          <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-4xl font-bold text-foreground">
               Tecnologias Avançadas
             </h2>

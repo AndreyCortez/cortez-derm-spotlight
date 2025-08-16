@@ -11,7 +11,7 @@ const Header = () => {
 
   const navigateToSection = (sectionId: string) => {
     // Check if we're on the home page
-    if (window.location.pathname === '/' || window.location.pathname === '') {
+    if (window.location.pathname === '/' || window.location.pathname === '' || window.location.hash === '#/') {
       // We're on home page, just scroll to section
       const element = document.getElementById(sectionId);
       if (element) {
@@ -22,13 +22,13 @@ const Header = () => {
       // We're on a different page, navigate to home first then scroll
       navigate("/");
       setIsMobileMenuOpen(false);
-      // Wait for navigation to complete, then scroll
+      // Wait for navigation to complete and DOM to update, then scroll
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
         }
-      }, 100);
+      }, 300);
     }
   };
 
