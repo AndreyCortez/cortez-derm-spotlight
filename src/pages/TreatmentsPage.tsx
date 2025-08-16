@@ -1,17 +1,28 @@
 import React, { useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getAllTreatmentsSorted } from "@/data/treatments";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const TreatmentsPage = () => {
   const treatments = getAllTreatmentsSorted();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleAgendarConsulta = () => {
+    navigate("/");
+    setTimeout(() => {
+      const element = document.getElementById("contato");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
   return (
     <div className="min-h-screen">
@@ -67,10 +78,11 @@ const TreatmentsPage = () => {
                   Entre em contato conosco para uma consulta personalizada e 
                   descubra qual tratamento é ideal para você.
                 </p>
-                <Button asChild className="bg-gradient-hero text-primary-foreground hover:opacity-90">
-                  <Link to="/#contato">
-                    Agendar Consulta
-                  </Link>
+                <Button 
+                  onClick={handleAgendarConsulta}
+                  className="bg-gradient-hero text-primary-foreground hover:opacity-90"
+                >
+                  Agendar Consulta
                 </Button>
               </div>
             </div>

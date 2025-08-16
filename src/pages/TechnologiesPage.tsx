@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getAllTechnologiesSorted } from "@/data/technologies";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,10 +9,21 @@ import clinicTechImage from "@/assets/clinic-technology.jpg";
 
 const TechnologiesPage = () => {
   const technologies = getAllTechnologiesSorted();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleAgendarVisita = () => {
+    navigate("/");
+    setTimeout(() => {
+      const element = document.getElementById("contato");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
   return (
     <div className="min-h-screen">
@@ -100,10 +111,11 @@ const TechnologiesPage = () => {
                   Agende uma consulta e conheça pessoalmente nossos equipamentos 
                   e como eles podem ajudar no seu tratamento.
                 </p>
-                <Button asChild className="bg-gradient-hero text-primary-foreground hover:opacity-90">
-                  <Link to="/#contato">
-                    Agendar Visita
-                  </Link>
+                <Button 
+                  onClick={handleAgendarVisita}
+                  className="bg-gradient-hero text-primary-foreground hover:opacity-90"
+                >
+                  Agendar Visita
                 </Button>
               </div>
             </div>

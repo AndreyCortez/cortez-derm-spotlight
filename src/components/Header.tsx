@@ -9,11 +9,26 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false); // Close mobile menu after navigation
+  const navigateToSection = (sectionId: string) => {
+    // Check if we're on the home page
+    if (window.location.pathname === '/' || window.location.pathname === '') {
+      // We're on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        setIsMobileMenuOpen(false);
+      }
+    } else {
+      // We're on a different page, navigate to home first then scroll
+      navigate("/");
+      setIsMobileMenuOpen(false);
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
     }
   };
 
@@ -50,7 +65,7 @@ const Header = () => {
             {navigationItems.map((item) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(item)}
+                onClick={() => navigateToSection(item)}
                 className="text-foreground hover:text-primary transition-colors duration-300 capitalize font-medium"
               >
                 {item}
@@ -59,7 +74,7 @@ const Header = () => {
           </nav>
 
           <Button
-            onClick={() => scrollToSection("contato")}
+            onClick={() => navigateToSection("contato")}
             className="hidden xl:block bg-gradient-hero hover:shadow-medical transition-all duration-300"
           >
             Agendar Consulta
@@ -96,7 +111,7 @@ const Header = () => {
                   {navigationItems.map((item) => (
                     <button
                       key={item}
-                      onClick={() => scrollToSection(item)}
+                      onClick={() => navigateToSection(item)}
                       className="text-left text-lg text-foreground hover:text-primary transition-colors duration-300 capitalize font-medium py-2 border-b border-border/50"
                     >
                       {item}
@@ -105,7 +120,7 @@ const Header = () => {
                 </nav>
 
                 <Button
-                  onClick={() => scrollToSection("contato")}
+                  onClick={() => navigateToSection("contato")}
                   className="bg-gradient-hero hover:shadow-medical transition-all duration-300 mt-6"
                 >
                   Agendar Consulta
