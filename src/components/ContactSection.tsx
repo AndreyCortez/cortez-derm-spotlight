@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { contactData } from "@/data/contact";
+import ReactGA from 'react-ga4';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -14,8 +15,11 @@ const ContactSection = () => {
     message: ""
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     if (!formData.name || !formData.phone || !formData.email) {
       toast({
@@ -23,16 +27,27 @@ const ContactSection = () => {
         description: "Por favor, preencha todos os campos obrigatórios.",
         variant: "destructive"
       });
+      setIsSubmitting(false);
       return;
     }
 
     // Simular envio do formulário
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve. Obrigada!",
-    });
+    // No seu projeto real, aqui estaria a lógica de envio para o Formspree ou outro backend.
+    setTimeout(() => {
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contato em breve. Obrigada!",
+      });
 
-    setFormData({ name: "", phone: "", email: "", message: "" });
+      ReactGA.event({
+        category: "Contact Form",
+        action: "Submit",
+        label: "Successful Form Submission"
+      });
+
+      setFormData({ name: "", phone: "", email: "", message: "" });
+      setIsSubmitting(false);
+    }, 1000); // Simula um pequeno atraso de rede
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
