@@ -2,13 +2,13 @@ export const contactData = {
   doctor: {
     name: "Dra. Maria Cortez",
     specialization: "Especialista em dermatologia",
-    crm: "123.456-SP",
-    rqe: "78.901",
+    crm: "219.326-SP",
+    rqe: "126.881",
     description: "Especialista em dermatologia dedicada a cuidar da saúde e beleza da sua pele com excelência e tecnologia de ponta."
   },
   contact: {
     phone: "(11) 94046-4727",
-    phoneNumber: "11940464727", // Para links WhatsApp
+    phoneNumber: "5511940464727", // Para links WhatsApp
     email: "mariacortezsousamb@gmail.com",
     workingHours: "Segunda à Sexta: 8:00 - 18:00",
     responseTime: "Resposta em até 24h"
@@ -22,7 +22,7 @@ export const contactData = {
     full: "R. Turiassu, 390 - Conjunto 113 e 114, Perdizes, São Paulo - SP, CEP: 05005-000"
   },
   socialMedia: {
-    whatsapp: "https://wa.me/11940464727",
+    whatsapp: "https://wa.me/5511940464727",
     instagram: "https://instagram.com/mariacortez.dermato"
   },
   googleServices: {

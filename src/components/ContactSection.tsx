@@ -1,61 +1,29 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { contactData } from "@/data/contact";
 import ReactGA from 'react-ga4';
 
+// Ícones para os botões (SVG)
+const WhatsAppIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: ""
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    if (!formData.name || !formData.phone || !formData.email) {
-      toast({
-        title: "Campos obrigatórios",
-        description: "Por favor, preencha todos os campos obrigatórios.",
-        variant: "destructive"
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Simular envio do formulário
-    // No seu projeto real, aqui estaria a lógica de envio para o Formspree ou outro backend.
-    setTimeout(() => {
-      toast({
-        title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve. Obrigada!",
-      });
-
-      ReactGA.event({
-        category: "Contact Form",
-        action: "Submit",
-        label: "Successful Form Submission"
-      });
-
-      setFormData({ name: "", phone: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000); // Simula um pequeno atraso de rede
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
+  // O estado e as funções do formulário não são mais necessários,
+  // mas podem ser mantidos caso você queira reutilizá-los no futuro.
 
   return (
     <section id="contato" className="bg-card py-24">
@@ -70,81 +38,43 @@ const ContactSection = () => {
           </p>
         </div>
 
-        {/* ATUALIZAÇÃO: Grid reordenado e alinhado com flexbox */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           
-          {/* 1. Envie uma Mensagem (Topo-Esquerda) */}
-          <Card className="p-8 shadow-card border-0 bg-background">
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              Envie uma Mensagem
+          {/* --- ÁREA DO FORMULÁRIO ATUALIZADA --- */}
+          {/* O card agora contém os botões para WhatsApp e Instagram */}
+          <Card className="p-8 shadow-card border-0 bg-background flex flex-col justify-center">
+            <h3 className="text-2xl font-bold text-foreground mb-4 text-center">
+              Contato Rápido e Redes Sociais
             </h3>
+            <p className="text-muted-foreground mb-8 text-center">
+              Prefere um contato mais direto? Nos envie uma mensagem ou conheça nosso trabalho.
+            </p>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Nome *
-                  </label>
-                  <Input
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Seu nome completo"
-                    className="border-border focus:ring-primary"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Telefone *
-                  </label>
-                  <Input
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="(11) 99999-9999"
-                    className="border-border focus:ring-primary"
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  E-mail *
-                </label>
-                <Input
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="seu@email.com"
-                  className="border-border focus:ring-primary"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Mensagem
-                </label>
-                <Textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Conte-nos como podemos ajudar..."
-                  rows={4}
-                  className="border-border focus:ring-primary"
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-gradient-hero hover:shadow-medical transition-all duration-300 text-lg py-4"
-              >
-                Enviar Mensagem
+            <div className="space-y-4">
+              <Button asChild size="lg" className="w-full bg-gradient-hero hover:shadow-medical transition-all duration-300 text-lg py-6 flex items-center gap-3">
+                <a 
+                  href={`https://wa.me/${contactData.contact.phoneNumber}?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => ReactGA.event({ category: "Contact", action: "Click", label: "WhatsApp Button" })}
+                >
+                  <WhatsAppIcon />
+                  Chamar no WhatsApp
+                </a>
               </Button>
-            </form>
+              
+              <Button asChild variant="outline" size="lg" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-lg py-6 flex items-center gap-3">
+                 <a 
+                  href={contactData.socialMedia.instagram} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => ReactGA.event({ category: "Contact", action: "Click", label: "Instagram Button" })}
+                >
+                  <InstagramIcon />
+                  Ver no Instagram
+                </a>
+              </Button>
+            </div>
           </Card>
 
           {/* 2. Localização (Topo-Direita) */}
@@ -159,7 +89,7 @@ const ContactSection = () => {
                 src={contactData.googleServices.mapsEmbedUrl}
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
+                style={{ border: 0, minHeight: '300px' }} // Adicionado minHeight para melhor responsividade
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -208,7 +138,6 @@ const ContactSection = () => {
                 O que nossos pacientes dizem
               </h3>
               <div className="flex items-center gap-2 text-amber-500">
-                {/* Renderiza 5 estrelas */}
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 ))}

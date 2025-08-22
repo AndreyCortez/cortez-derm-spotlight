@@ -1,6 +1,5 @@
-import drMariaImage from "@/assets/MariaCortezHome.png";
+import drMariaImage from "@/assets/MariaCortezHomeCropped.png";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card"; // Importei o Card novamente
 
 const AboutSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -11,26 +10,40 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="home" className="bg-background py-20 lg:py-32">
-      <div className="container mx-auto px-6">
+    <section id="home" className="bg-background py-20 lg:py-32 lg:pb-0">
+      <div className="container mx-auto lg:px-24 px-12 ">
         
-        {/* --- GRID PRINCIPAL (Apresentação e Imagem) --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-x-12 gap-y-12 items-center">
-
-          {/* COLUNA ESQUERDA (Texto): Ocupa 3 das 5 colunas no desktop */}
-          <div className="lg:col-span-3 space-y-8 text-center lg:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-5 lg:gap-x-12 gap-y-12 lg:gap-y-0">
+          {/* BLOCO DE TEXTO SUPERIOR */}
+          {/* TESTE: Adicionando !mb-0 para forçar a margem inferior a ser zero no desktop */}
+          <div className="lg:col-span-3 lg:row-start-1 lg:row-span-1 lg:col-start-1 text-center lg:text-left order-1 lg:!mb-0 lg:pt-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Dra. Maria Cortez
               <span className="block text-primary mt-2">Dermatologista</span>
             </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            {/* TESTE: Adicionando um estilo inline para forçar a margem zero no parágrafo */}
+            <p 
+              className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0 mt-6"
+              style={{ marginBottom: 0 }}
+            >
               Especialista pela Sociedade Brasileira de Dermatologia, com residência pelo Hospital
               do Servidor Público Municipal de São Paulo. Sua expertise é aplicada na preceptoria voluntária
               de Cosmiatria na mesma instituição.
             </p>
+          </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          {/* BLOCO DE TEXTO INFERIOR (MISSÃO E BOTÕES) */}
+          {/* TESTE: Adicionando !mt-4 para forçar uma margem superior pequena e específica */}
+          <div className="lg:col-span-3 lg:row-start-2 lg:row-span-2  lg:col-start-1 space-y-6 text-center lg:text-left order-3 lg:!mt-4 lg:pt-4 lg:pb-4">
+            
+            <blockquote className="border-l-4 border-primary/50 pl-6 italic text-muted-foreground relative text-lg">
+              "Minha missão é unir conhecimento científico e ética para 
+              oferecer um cuidado dermatológico individualizado. 
+              Acredito em uma abordagem integral, olhando para você como um todo, 
+              para promover saúde, realçar sua beleza natural com resultados refinados 
+              e garantir seu bem-estar duradouro."
+            </blockquote>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-8">
               <Button 
                 size="lg"
                 onClick={() => scrollToSection("contato")}
@@ -48,34 +61,18 @@ const AboutSection = () => {
               </Button>
             </div>
           </div>
-
-          {/* COLUNA DIREITA (Imagem): Ocupa 2 das 5 colunas e é maior */}
-          <div className="relative lg:col-span-2 flex items-center justify-center">
+          
+          {/* COLUNA DIREITA (IMAGEM) */}
+          <div className="relative lg:col-span-2 lg:row-span-2 lg:row-start-1 lg:col-start-4 min-h-[400px] lg:min-h-0 order-2">
              <div className="absolute inset-4 sm:inset-8 bg-gradient-accent rounded-3xl blur-3xl opacity-25 -z-10"></div>
              <img
               src={drMariaImage}
               alt="Dra. Maria Cortez"
-              // A imagem agora pode ocupar toda a largura de sua coluna
-              className="relative rounded-3xl shadow-medical w-full max-w-md lg:max-w-full mx-auto" 
+              className="relative rounded-3xl shadow-medical w-full h-full object-cover" 
             />
           </div>
-        </div>
 
-        {/* --- SEÇÃO INFERIOR (Missão, no layout antigo) --- */}
-        <div className="mt-24 grid md:grid-cols-2 gap-12 items-stretch">
-            {/* O grid pai tem 2 colunas, mas o card da missão vai ocupar as duas */}
-            <div className="relative bg-card rounded-3xl p-8 shadow-medical md:col-span-2">
-                {/* <h3 className="text-2xl font-bold text-foreground mb-6 text-center">Missão</h3> */}
-                <p className="text-muted-foreground leading-relaxed text-lg max-w-4xl mx-auto text-center">
-                "Minha missão é unir conhecimento científico e ética para 
-                oferecer um cuidado dermatológico individualizado. 
-                Acredito em uma abordagem integral, olhando para você como um todo, 
-                para promover saúde, realçar sua beleza natural com resultados refinados 
-                e garantir seu bem-estar duradouro."
-                </p>
-            </div>
         </div>
-
       </div>
     </section>
   );
